@@ -13,15 +13,15 @@ on:
         options:
           - staging
           - production
-Message:
-  description: 'deploymnet started '
-  required: true
-  default: 'v1.0.0'
-  type: string
+      message:
+        description: 'deployment started'
+        required: true
+        default: 'v1.0.0'
+        type: string
 
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploying to ${{ inputs.environment }}"
+      - run: echo "Deploying to ${{ inputs.environment }} with message: ${{ inputs.message }}"
