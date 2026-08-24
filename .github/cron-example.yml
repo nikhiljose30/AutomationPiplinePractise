@@ -1,4 +1,6 @@
 # .github/workflows/greeting.yml
+#https://crontab.cronhub.io/
+#https://sqatools.in/github-actions-fundamentals-for-beginners/
 name: Daily Greeting
 on:
   schedule:
