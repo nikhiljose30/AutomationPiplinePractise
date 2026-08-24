@@ -1,27 +1,23 @@
 # .github/workflows/greeting.yml
 #https://crontab.cronhub.io/
 #https://sqatools.in/github-actions-fundamentals-for-beginners/
-name: Manual Release
+name: Daily Greeting
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Target deployment environment'
-        required: true
-        default: 'staging'
-        type: choice
-        options:
-          - staging
-          - production
-Message:
-  description: 'deploymnet started '
-  required: true
-  default: 'v1.0.0'
-  type: string
-
+  schedule:
+    - cron: '*/5 * * * *' # every 5min run
 
 jobs:
-  deploy:
+  greet1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploying to ${{ inputs.environment }}"
+      - run: echo "Good morning, team!"
+
+  greet2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Good evening, team!"
+  
+  greet3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Good ni, team!"

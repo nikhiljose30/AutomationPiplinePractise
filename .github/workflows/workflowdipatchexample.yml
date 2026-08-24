@@ -1,0 +1,27 @@
+# .github/workflows/greeting.yml
+#https://crontab.cronhub.io/
+#https://sqatools.in/github-actions-fundamentals-for-beginners/
+name: Manual Release
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target deployment environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+Message:
+  description: 'deploymnet started '
+  required: true
+  default: 'v1.0.0'
+  type: string
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying to ${{ inputs.environment }}"
