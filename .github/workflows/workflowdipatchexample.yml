@@ -24,4 +24,4 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploying to ${{ inputs.environment }} with message: ${{ inputs.message }}"
+      - run: echo "Deploying to ${{ github.event.inputs.environment }} with message: ${{ github.event.inputs.message }}"
